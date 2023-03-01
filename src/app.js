@@ -23,6 +23,8 @@ app.use(express.urlencoded({ extended: false }));
 
 //routes
 
-app.use("/", router);
+app.use( router);
+
+app.use(express.static(path.join(__dirname, 'public')))
 
 export default app;

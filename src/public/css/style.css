@@ -1,0 +1,26 @@
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+.flex {
+  display: flex;
+}
+.f-column {
+  flex-flow: column wrap;
+}
+@media (min-width: 768px) {
+  .mq-f-row {
+    flex-flow: row wrap;
+  }
+}
+.f-gap {
+  gap: 1rem;
+}
+.mt-02{
+    margin-top: 2rem;
+  }
+@media (min-width: 768px) {
+  .mq-mt-2 {
+    margin-top: 0;
+  }
+}

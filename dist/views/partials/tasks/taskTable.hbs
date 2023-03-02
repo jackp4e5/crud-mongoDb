@@ -1,0 +1,50 @@
+{{#if tasks}}
+  <table class="table table-bordered table-hover table-dark">
+    <thead>
+      <tr>
+        <th>N.</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Operations</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      {{#each tasks}}
+        <tr>
+          <td>{{@index}}</td>
+          <td>{{this.title}}</td>
+          <td>{{this.description}}</td>
+          <td class="flex f-column f-gap mq-f-row">
+
+            {{#if done}}
+              <a
+                class="btn btn-outline-light"
+                href="/toogleDone/{{_id}}"
+              >Undone</a>
+            {{else}}
+              <a
+                class="btn btn-outline-success"
+                href="/toogleDone/{{_id}}"
+              >Done</a>
+            {{/if}}
+            <a class="btn btn-outline-danger" href="/delete/{{_id}}">Delete</a>
+            <a class="btn btn-outline-warning" href="/edit/{{_id}}">Update</a>
+          </td>
+        </tr>
+
+      {{/each}}
+
+    </tbody>
+
+  </table>
+
+{{else}}
+
+  <div>
+    <h2 class="heading text-center">No Task</h2>
+    <img src="" alt="" />
+  </div>
+
+{{/if}}
